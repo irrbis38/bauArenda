@@ -1289,3 +1289,57 @@ input {
     margin-right: 10px;
   }
 }
+
+/*===== need styles =====*/
+
+.causes {
+  padding-top: $block_padding;
+  padding-bottom: $block_padding;
+  background: url("./../img/causes/causes-bg.jpg");
+}
+
+.causes__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.causes__main {
+  width: 44%;
+  margin-right: 4.5%;
+}
+
+.causes__title {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.causes__text {
+  color: #fff;
+}
+
+.causes__text,
+.causes__description {
+  font-size: 14px;
+  line-height: 170%;
+}
+
+.causes__wrapper {
+  width: 51.5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 297px);
+  gap: 7px;
+}
+
+.causes__item {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+  border-radius: 10px;
+}
+
+.causes__icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+}
