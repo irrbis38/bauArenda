@@ -4,3 +4,24 @@
 CSS rules to specify families
 
 font-family: 'Montserrat', sans-serif;
+
+transition: color 0.2s ease-in-out;
+
+
+header
+intro
+technics
+about
+catalog
+feedback first__feedback
+services
+advantage
+news
+brands
+need
+causes
+reasons
+machines
+reviews
+feedback second__feedback
+footer
