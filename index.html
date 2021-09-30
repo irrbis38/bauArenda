@@ -10,80 +10,100 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header">
+
+    <header class="header" id="top">
+
       <div class="header__top">
+
         <div class="container">
+
           <nav class="header__menu">
-            <a href="" class="header__link">Аренда техники</a>
-            <a href="" class="header__link header__list">
-              О компании
-              <svg
-                width="9"
-                height="6"
-                viewBox="0 0 9 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L4.5 5L8 1"
-                  stroke="#1F1E1D"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-            <a href="" class="header__link">Цены</a>
-            <a href="" class="header__link header__list">
-              Услуги
-              <svg
-                width="9"
-                height="6"
-                viewBox="0 0 9 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L4.5 5L8 1"
-                  stroke="#1F1E1D"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-            <a href="" class="header__link">Новости</a>
-            <a href="" class="header__link">Акции</a>
-            <a href="" class="header__link header__list">
-              Контакты
-              <svg
-                width="9"
-                height="6"
-                viewBox="0 0 9 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1L4.5 5L8 1"
-                  stroke="#1F1E1D"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </nav>
-          <!-- /.header__menu -->
+
+            <ul>
+
+              <li class="header__elem">
+                <a href="" class="header__link">Аренда техники</a>
+              </li>
+
+              <li class="header__elem dropdown_show">
+                <a href="" class="header__link header__list">
+                  О компании
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <div class="header__company dropdown_menu">
+                  <a href="#" class="header__link">Наши клиенты</a>
+                  <a href="#" class="header__link">Наши партнеры</a>
+                  <a href="#" class="header__link">Статьи</a>
+                  <a href="#" class="header__link">Отзывы</a>
+                  <a href="#" class="header__link">Гарантии</a>
+                  <a href="#" class="header__link">Лицензии и сертификаты</a>
+                  <a href="#" class="header__link">Вакансии</a>
+                  <a href="#" class="header__link">Вопрос/ответ</a>
+                </div>
+              </li>
+
+              <li class="header__elem">
+                <a href="" class="header__link">Цены</a>
+              </li>
+
+              <li class="header__elem dropdown_show">
+                <a href="" class="header__link header__list">
+                  Услуги
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <div class="header__services dropdown_menu">
+                  <a href="#" class="header__link">Земляные работы</a>
+                  <a href="#" class="header__link">Бурение отверстий</a>
+                  <a href="#" class="header__link">Вывоз и утилизация грунта</a>
+                  <a href="#" class="header__link">Вывоз строительного мусора</a>
+                  <a href="#" class="header__link">Доставка негабаритных грузов</a>
+                  <a href="#" class="header__link">Продажа строительного песка</a>
+                  <a href="#" class="header__link">Уборка и вывоз снега</a>
+                </div>
+              </li>
+
+              <li class="header__elem">
+                <a href="" class="header__link">Новости</a>
+              </li>
+
+              <li class="header__elem">
+                <a href="" class="header__link">Акции</a>
+              </li>
+
+              <li class="header__elem dropdown_show">
+                <a href="" class="header__link header__list">
+                  Контакты
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <div class="header__cont dropdown_menu">
+                  <a href="#" class="header__link">Горячая линия</a>
+                </div>
+              </li>
+
+            </ul>
+
+          </nav><!-- /.header__menu -->
+
           <div class="header__search">
             <img src="./img/header/search.svg" alt="" class="header__icon" />
             <input type="text" class="header__input" placeholder="Поиск" />
-          </div>
-          <!-- /.header__search -->
-        </div>
-        <!-- /.container -->
-      </div>
-      <!-- /.header__top -->
+          </div><!-- /.header__search -->
+
+        </div><!-- /.container -->
+
+      </div><!-- /.header__top -->
+
       <div class="header__bottom">
         <div class="container">
           <div class="header__logo">
@@ -180,15 +200,29 @@
           </div>
 
           <div class="intro__info">
-            <div class="intro__slider">
-              <div class="intro__block">
-                <div class="intro__slide">
+            <div class="intro__slider swiper">
+              <div class="intro__block swiper-wrapper">
+                <div class="intro__slide swiper-slide">
                   <h3 class="intro__header">37 единиц спецтехники для вас</h3>
 
                   <p class="intro__text">
                     Компания «БауАренда» предлагает строительную технику в
                     аренду в Минске: экскаваторы, бульдозеры, ямобуры,
                     экскаваторы-погрузчики, гидромолоты, самосвалы.
+                  </p>
+                </div>
+                <div class="intro__slide swiper-slide">
+                  <h3 class="intro__header">Аренда экскаваторов по выгодным ценам</h3>
+
+                  <p class="intro__text">
+                    Компания «Бауаренда» всегда готова предложить вам аренду строительной техники в широком ассортименте по выгодным ценам.
+                  </p>
+                </div>
+                <div class="intro__slide swiper-slide">
+                  <h3 class="intro__header">Скидка 15% при заказе от трех единиц техники</h3>
+
+                  <p class="intro__text">
+                    К5% скидка - при заказе от трёх единиц техники в аренду. Работать с нами комфортно: 7 дней в неделю; 22 вида техники; 100% качество.
                   </p>
                 </div>
               </div>
@@ -249,6 +283,38 @@
       </div>
     </section>
     <!-- /.intro -->
+
+    <div class="fixed">
+      <div class="fixed__toTop">
+        <div class="button-bg"></div>
+        <img src="./img/fixed/arrow-top.svg" alt="подняться наверх">
+      </div>
+      <div class="fixed__showField">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="25" fill="#FFCB09"/>
+          <path d="M22.9922 26.9067C24.4998 28.4361 26.324 29.6169 28.3366 30.3662L31.0594 28.1995C31.1401 28.1439 31.2358 28.1141 31.3338 28.1141C31.4319 28.1141 31.5276 28.1439 31.6083 28.1995L36.6638 31.4567C36.8558 31.5721 37.0182 31.7306 37.1384 31.9195C37.2586 32.1085 37.3332 32.3228 37.3563 32.5456C37.3794 32.7683 37.3504 32.9934 37.2716 33.203C37.1928 33.4126 37.0663 33.601 36.9022 33.7534L34.5333 36.0934C34.194 36.4286 33.7771 36.6746 33.3196 36.8094C32.8622 36.9443 32.3784 36.9638 31.9116 36.8662C27.2549 35.9044 22.9627 33.6519 19.5255 30.3662C16.1646 27.0477 13.8389 22.8253 12.8305 18.2112C12.7309 17.7516 12.7517 17.274 12.8909 16.8248C13.0301 16.3756 13.2829 15.97 13.625 15.6473L16.0805 13.2784C16.2325 13.1222 16.4178 13.0025 16.6226 12.9281C16.8274 12.8537 17.0463 12.8266 17.2631 12.8488C17.4798 12.8711 17.6887 12.9421 17.8742 13.0565C18.0596 13.1709 18.2168 13.3258 18.3338 13.5095L21.6994 18.5001C21.7575 18.5784 21.7888 18.6734 21.7888 18.7709C21.7888 18.8684 21.7575 18.9634 21.6994 19.0417L19.4822 21.7067C20.2518 23.6791 21.4508 25.4554 22.9922 26.9067Z" fill="white"/>
+        </svg>          
+      </div>
+    </div><!-- /.fixed -->
+
+    <div class="fixed__feedback">
+      <div class="fixed__close">
+        <img src="./img/fixed/close.svg" alt="закрыть">
+      </div>
+      <h3 class="fixed__feedbackTitle">Обратная связь</h3>
+      <form action="#" class="fixed__form" novalidate>
+        <p class="error__message">Заполните все обязательные для заполнения поля</p>
+        <div class="feedback__item fixed__item">
+          <input type="text" class="fixed__name feedback__name" placeholder="Имя*" name="name" required>
+        </div>
+        <div class="feedback__item fixed__item">
+          <input type="text" class="fixed__phone feedback__phone" placeholder="Телефон*" name="phone" minlength="7" required>
+        </div>
+        <input type="submit" class="fixed__submit btn__yellow btn__link" value="Отправить" name="submit">
+      </form>
+    </div>
+
+    <div class="fixed__bg"></div>
 
     <section class="technics">
       <div class="container">
@@ -384,7 +450,7 @@
         <h2 class="about__title block__title">Главное о нас</h2>
 
         <div class="about__wrapper">
-          <div class="about__top">
+          <div class="about__top element-animation">
             <div class="about__light">
               <div class="about__first">
                 <p class="about__number">37</p>
@@ -417,7 +483,7 @@
             </div>
           </div>
 
-          <div class="about__bottom">
+          <div class="about__bottom element-animation">
             <div class="about__dark">
               <h4 class="about__subtitle">Работаем быстро</h4>
 
@@ -1102,17 +1168,20 @@
           проконсультирует.
         </p>
 
-        <form action="#" class="feedback__form">
+        <form action="#" class="feedback__form" id="second" novalidate>
+          <p class="error__message">Заполните все обязательные для заполнения поля</p>
           <div class="feedback__item">
-            <input type="text" class="feedback__name" placeholder="Имя*" />
+            <input type="text" class="feedback__name" placeholder="Имя*" name="name" minlength="2" required/>
           </div>
           <div class="feedback__item">
-            <input type="text" class="feedback__phone" placeholder="Телефон*" />
+            <input type="text" class="feedback__phone" placeholder="Телефон*"  name="phone" minlength="7" required/>
           </div>
           <input
             type="submit"
             class="feedback__submit btn__link btn__yellow"
             value="Отправить"
+            name="submit"
+            id="second_btn"
           />
         </form>
       </div>
@@ -1127,7 +1196,7 @@
         </h2>
 
         <div class="services__wrapper">
-          <div class="services__item services1">
+          <div class="services__item services1 element-animation">
             <div class="services__info">
               <h4 class="services__header">Все услуги</h4>
               <p class="services__text">
@@ -1137,7 +1206,7 @@
             </div>
           </div>
 
-          <div class="services__item services2">
+          <div class="services__item services2 element-animation">
             <div class="services__info">
               <h4 class="services__header">
                 Уборка и вывоз снега для утилизации
@@ -1149,7 +1218,7 @@
             </div>
           </div>
 
-          <div class="services__item services3">
+          <div class="services__item services3 element-animation">
             <div class="services__info">
               <h4 class="services__header">Вывоз мусора со стройплощадки</h4>
               <p class="services__text">
@@ -1159,7 +1228,7 @@
             </div>
           </div>
 
-          <div class="services__item services4">
+          <div class="services__item services4 element-animation">
             <div class="services__info">
               <h4 class="services__header">Вывоз и утилизация грунта</h4>
               <p class="services__text">
@@ -1170,7 +1239,7 @@
             </div>
           </div>
 
-          <div class="services__item services5">
+          <div class="services__item services5 element-animation">
             <div class="services__info">
               <h4 class="services__header">Продажа строительного песка</h4>
               <p class="services__text">
@@ -1277,7 +1346,7 @@
         <h2 class="news__title block__title">Новости</h2>
 
         <div class="news__wrapper">
-          <div class="news__item news1">
+          <div class="news__item news1 element-animation">
             <h4 class="news__header">
               «Белорусская строительная неделя» снова в Минске
             </h4>
@@ -1310,7 +1379,7 @@
           </div>
           <!-- /.news__item -->
 
-          <div class="news__item news2">
+          <div class="news__item news2 element-animation">
             <h4 class="news__header">
               Как правильно установить автокран на рабочей строительной площадке
             </h4>
@@ -1343,7 +1412,7 @@
           </div>
           <!-- /.news__item -->
 
-          <div class="news__item news3">
+          <div class="news__item news3 element-animation">
             <h4 class="news__header">
               Область применения телескопических погрузчиков
             </h4>
@@ -1376,7 +1445,7 @@
           </div>
           <!-- /.news__item -->
 
-          <div class="news__item news4">
+          <div class="news__item news4 element-animation">
             <h4 class="news__header">
               Весомые причины для аренды специализированной техники
             </h4>
@@ -1409,7 +1478,7 @@
           </div>
           <!-- /.news__item -->
 
-          <div class="news__item news5">
+          <div class="news__item news5 element-animation">
             <h4 class="news__header">
               Особенности организации вывоза строительного мусора и грунта
             </h4>
@@ -1668,7 +1737,7 @@
         </h2>
 
         <div class="reasons__wrapper">
-          <div class="reasons__item reason1">
+          <div class="reasons__item reason1 element-animation">
             <p class="reasons__text">
               Услуги аренды спецтехники юридическим лицам и частным клиентам —
               простое и выгодное решение для выполнения любых работ в
@@ -1686,7 +1755,7 @@
           </div>
           <!-- /.reasons__item -->
 
-          <div class="reasons__item reason2">
+          <div class="reasons__item reason2 element-animation">
             <p class="reasons__number">01</p>
 
             <p class="reasons__text">
@@ -1697,7 +1766,7 @@
           </div>
           <!-- /.reasons__item -->
 
-          <div class="reasons__item reason3">
+          <div class="reasons__item reason3 element-animation">
             <p class="reasons__number">02</p>
 
             <p class="reasons__text">
@@ -1708,7 +1777,7 @@
           </div>
           <!-- /.reasons__item -->
 
-          <div class="reasons__item reason4">
+          <div class="reasons__item reason4 element-animation">
             <p class="reasons__number">03</p>
 
             <p class="reasons__text">
@@ -1719,7 +1788,7 @@
           </div>
           <!-- /.reasons__item -->
 
-          <div class="reasons__item reason5">
+          <div class="reasons__item reason5 element-animation">
             <p class="reasons__number">04</p>
 
             <p class="reasons__text">
@@ -1863,34 +1932,58 @@
       <div class="container">
         <h2 class="reviews__title block__title">Отзывы</h2>
 
-        <div class="reviews__slider">
-          <div class="reviews__wrapper">
-            <div class="reviews__item">
-              <div class="reviews__preview">
-                <div class="reviews__img">
-                  <img src="./img/reviews/1.jpg" alt="отзыв" />
+        <div class="reviews__slider-container">
+          <div class="reviews__slider swiper">
+            <div class="reviews__wrapper swiper-wrapper">
+              <div class="reviews__item swiper-slide">
+                <div class="reviews__preview">
+                  <div class="reviews__img">
+                    <img src="./img/reviews/1.jpg" alt="отзыв" />
+                  </div>
+                </div>
+  
+                <div class="reviews__info">
+                  <h4 class="reviews__header">
+                    Строительная компания АгриПО, директор Ореховский В.В.
+                  </h4>
+                  <p class="reviews__text">
+                    Выражаем признательность за сотрудничество. Компания
+                    «БауАренда» предоставила в аренду тралы для транспортировки
+                    леса. Техника полностью отрабатывает потраченные деньги.
+                    Никаких «случайностей» в виде выхода из строя не произошло. По
+                    организации работы тоже все замечательно. Подписали договор, и
+                    уже на следующее утро тралы были в нашем распоряжении.
+                    Рекомендуем ООО «БауАренда» как надежного контрагента!
+                  </p>
+                  <a href="" class="reviews__link"></a>
                 </div>
               </div>
-
-              <div class="reviews__info">
-                <h4 class="reviews__header">
-                  Строительная компания АгриПО, директор Ореховский В.В.
-                </h4>
-                <p class="reviews__text">
-                  Выражаем признательность за сотрудничество. Компания
-                  «БауАренда» предоставила в аренду тралы для транспортировки
-                  леса. Техника полностью отрабатывает потраченные деньги.
-                  Никаких «случайностей» в виде выхода из строя не произошло. По
-                  организации работы тоже все замечательно. Подписали договор, и
-                  уже на следующее утро тралы были в нашем распоряжении.
-                  Рекомендуем ООО «БауАренда» как надежного контрагента!
-                </p>
-                <a href="" class="reviews__link"></a>
-              </div>
-            </div>
-            <!-- /.reviews__item -->
+              <!-- /.reviews__item -->
+              <div class="reviews__item swiper-slide">
+                <div class="reviews__preview">
+                  <div class="reviews__img">
+                    <img src="./img/reviews/1.jpg" alt="отзыв" />
+                  </div>
+                </div>
+  
+                <div class="reviews__info">
+                  <h4 class="reviews__header">
+                    Строительная компания АгриПО, директор Ореховский В.В.
+                  </h4>
+                  <p class="reviews__text">
+                    Выражаем признательность за сотрудничество. Компания
+                    «БауАренда» предоставила в аренду тралы для транспортировки
+                    леса. Техника полностью отрабатывает потраченные деньги.
+                    Никаких «случайностей» в виде выхода из строя не произошло. По
+                    организации работы тоже все замечательно. Подписали договор, и
+                    уже на следующее утро тралы были в нашем распоряжении.
+                    Рекомендуем ООО «БауАренда» как надежного контрагента!
+                  </p>
+                  <a href="" class="reviews__link"></a>
+                </div>
+              </div><!-- /.reviews__item -->
+            </div><!-- /.reviews__wrapper -->
           </div>
-          <!-- /.reviews__wrapper -->
 
           <div class="reviews__nav">
             <div class="reviews__prev">
@@ -1902,12 +1995,9 @@
               <div class="reviews__navButton"></div>
               <img src="./img/intro/intro-next.svg" alt="next" />
             </div>
-          </div>
-          <!-- /.reviews__nav -->
-        </div>
-        <!-- /.reviews__slider -->
-      </div>
-      <!-- /.container -->
+          </div><!-- /.reviews__nav -->
+        </div><!-- /.reviews__slider -->
+      </div><!-- /.container -->
     </section>
     <!-- /.reviews -->
 
@@ -1920,17 +2010,19 @@
           проконсультирует.
         </p>
 
-        <form action="#" class="feedback__form">
+        <form action="#" class="feedback__form" novalidate>
+          <p class="error__message">Заполните все обязательные для заполнения поля</p>
           <div class="feedback__item">
-            <input type="text" class="feedback__name" placeholder="Имя*" />
+            <input type="text" class="feedback__name" placeholder="Имя*" name="name" required/>
           </div>
           <div class="feedback__item">
-            <input type="text" class="feedback__phone" placeholder="Телефон*" />
+            <input type="text" class="feedback__phone" placeholder="Телефон*" name="phone" minlength="7" required/>
           </div>
           <input
             type="submit"
             class="feedback__submit btn__link btn__yellow"
             value="Отправить"
+            name="submit"
           />
         </form>
       </div>
@@ -2171,7 +2263,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
