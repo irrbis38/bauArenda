@@ -212,11 +212,16 @@ input {
   opacity: 1;
 }
 
-.dropdown_menu .header__link {
+.dropdown_menu.dropdown__list {
+  display: block;
+}
+
+.dropdown_menu li {
+  display: block;
   margin-bottom: 20px;
 }
 
-.dropdown_menu .header__link:last-child {
+.dropdown_menu li:last-child {
   margin-bottom: 0;
 }
 
@@ -1409,13 +1414,31 @@ input {
 }
 
 .services__item:first-child {
+  position: relative;
   border: none;
-  background: url("./../img/services/1.jpg") center/cover no-repeat;
+  overflow: hidden;
 }
 
 .services__item:hover {
   -webkit-box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
           box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+}
+
+.services__item-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url("./../img/services/1.jpg") center/cover no-repeat;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.services__item:first-child:hover .services__item-bg {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .services__info {
@@ -1977,19 +2000,39 @@ input {
 }
 
 .machines__intro {
+  position: relative;
   margin-bottom: 30px;
   padding: 104px 0 114px;
   border-radius: 10px;
-  background: url("./../img/machines/machines__bg.jpg") center/cover no-repeat;
-  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
-  transition: -webkit-box-shadow 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out;
-  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .machines__intro:hover {
   -webkit-box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
           box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+}
+
+.machines__intro-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url("./../img/machines/machines__bg.jpg") center/cover no-repeat;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.machines__intro:hover .machines__intro-bg {
+  width: 103%;
+  height: 103%;
 }
 
 .machines__header,
