@@ -168,8 +168,8 @@ input {
   top: 32px;
   left: 0;
   z-index: 5;
-  width: 270px;
-  padding: 30px 20px 35px 20px;
+  width: 274px;
+  padding: 30px 18px 35px 18px;
   background: #fff;
   box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
   border-radius: 0px 0px 10px 10px;
@@ -298,11 +298,7 @@ input {
 }
 
 .header__contact {
-  transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: #ffcb09;
-  }
+  transition: all 0.2s ease-in-out;
 }
 
 .header__messengers {
@@ -340,11 +336,15 @@ input {
   top: 2px;
 }
 
-.header__whatsapp:hover path:first-child {
+.header__item:hover .header__contact {
+  color: #ffcb09;
+}
+
+.header__item:hover .header__whatsapp path:first-child {
   fill: #00e676;
 }
 
-.header__viber:hover path:first-child {
+.header__item:hover .header__viber path:first-child {
   fill: #7b519c;
 }
 
@@ -463,6 +463,10 @@ input {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+
+  &:hover .intro__category {
+    color: #ffcb09;
+  }
 }
 
 .intro__news {
@@ -476,10 +480,6 @@ input {
   line-height: 170%;
   color: #4d5051;
   transition: color 0.2s ease-in-out;
-
-  &:hover {
-    color: #ffcb09;
-  }
 }
 
 .intro__name {
@@ -492,6 +492,10 @@ input {
 
   &:hover {
     color: #ffcb09;
+  }
+
+  & a {
+    display: block;
   }
 }
 
@@ -645,6 +649,13 @@ input {
   }
 }
 
+.fixed__after {
+  margin-bottom: 42px;
+  font-size: 14px;
+  line-height: 170%;
+  color: #1f1e1d;
+}
+
 /*===== technics styles =====*/
 
 .technics {
@@ -665,7 +676,7 @@ input {
 
 .technics__item {
   position: relative;
-  padding: 20px 22px;
+  padding: 10px 30px 30px 30px;
   border: 1px solid rgba(227, 227, 227, 0.5);
   border-radius: 10px;
   text-align: center;
@@ -687,13 +698,12 @@ input {
 }
 
 .technics__img {
-  margin-bottom: 30px;
-  //!!! Привести картинки к одному размеру
-  // & img {
-  //   display: block;
-  //   width: 100%;
-  //   height: auto;
-  // }
+  margin-bottom: 20px;
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .technics__name {
@@ -863,7 +873,7 @@ input {
 .catalog__search {
   display: flex;
   align-items: center;
-  width: 86%;
+  width: 85%;
   height: 36px;
   margin-right: 2%;
   padding: 0 26px;
@@ -897,7 +907,8 @@ input {
 }
 
 .catalog__sort {
-  width: 12%;
+  position: relative;
+  width: 13%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -908,6 +919,57 @@ input {
 
   & span {
     margin-right: 8px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: -9px;
+    left: 0;
+    z-index: 2;
+    cursor: default;
+  }
+}
+
+.catalog__sort-list {
+  position: absolute;
+  left: 50%;
+  top: 23px;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 145px;
+  height: 113px;
+  padding: 16px 12px;
+  background: #fff;
+  box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+  border-radius: 0px 0px 10px 10px;
+  cursor: default;
+  visibility: hidden;
+  opacity: 0;
+  transition: color 0.2s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.catalog__sort-item {
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4d5051;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: #ffcb09;
   }
 }
 
@@ -1037,6 +1099,7 @@ input {
 }
 
 .catalog__name {
+  font-weight: 400;
   color: #a3a3a3;
 }
 
@@ -1058,7 +1121,7 @@ input {
 
 /*===== first feedback styles =====*/
 
-.first__feedback .container {
+.feedback__wrapper {
   padding: 70px 73px 75px 73px;
   background: #f5f7fb;
   border-radius: 10px;
@@ -1363,7 +1426,7 @@ input {
   height: 8%;
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 120%;
   color: #acacac;
@@ -1376,6 +1439,8 @@ input {
 
 .news__views {
   margin-right: 21px;
+  display: flex;
+  align-items: center;
 }
 
 .news__icon {
@@ -1384,6 +1449,11 @@ input {
 
 .news__more {
   margin: 0 auto;
+}
+
+.news__comments {
+  display: flex;
+  align-items: center;
 }
 
 /*===== brands styles =====*/
@@ -1636,6 +1706,7 @@ input {
   transition: box-shadow 0.2s ease-in-out;
 
   &:first-child {
+    padding: 50px 30px 50px 30px;
     border: none;
     background-color: #f5f7fb;
   }
@@ -2047,6 +2118,14 @@ input {
     bottom: 0;
     left: 0;
     z-index: 2;
+  }
+
+  & path {
+    transition: color 0.2s ease-in-out;
+  }
+
+  &:hover path {
+    fill: #ffd741;
   }
 }
 

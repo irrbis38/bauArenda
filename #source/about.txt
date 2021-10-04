@@ -25,3 +25,21 @@ machines
 reviews
 feedback second__feedback
 footer
+
+
+Все --> all
+Экскаваторы-погрузчики --> excavator
+Самосвалы --> tipper
+Бульдозеры --> dozer
+Гусеничный экскаватор --> digger
+Погрузчик --> loader
+Фронтальный погрузчик --> f-loader
+Колесный экскаватор --> wheel-digger
+Тралы и низкорамные площадки --> flail
+Грунтовой каток --> truck
+Автокран --> crane
+Автогрейдер --> grader
+Телескопический погрузчик --> telescopic-loader
+Мини-техника --> mini
+Гидромолоты --> hydraulic-hammer 
+Ямобур (буровая техника) --> drilling-equipment 

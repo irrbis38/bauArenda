@@ -224,7 +224,7 @@
                   <h3 class="intro__header">Скидка 15% при заказе от трех единиц техники</h3>
 
                   <p class="intro__text">
-                    К5% скидка - при заказе от трёх единиц техники в аренду. Работать с нами комфортно: 7 дней в неделю; 22 вида техники; 100% качество.
+                    5% скидка - при заказе от трёх единиц техники в аренду. Работать с нами комфортно: 7 дней в неделю; 22 вида техники; 100% качество.
                   </p>
                 </div>
               </div>
@@ -305,12 +305,12 @@
       </div>
       <h3 class="fixed__feedbackTitle">Обратная связь</h3>
       <form action="#" class="fixed__form" novalidate>
-        <p class="error__message">Заполните все обязательные для заполнения поля</p>
+        <p class="error__message">Заполните все обязательные для заполнения поля.</p>
         <div class="feedback__item fixed__item">
           <input type="text" class="fixed__name feedback__name" placeholder="Имя*" name="name" required>
         </div>
         <div class="feedback__item fixed__item">
-          <input type="text" class="fixed__phone feedback__phone" placeholder="Телефон*" name="phone" minlength="7" required>
+          <input type="text" class="fixed__phone feedback__phone" placeholder="Телефон*" name="phone" minlength="9" required>
         </div>
         <input type="submit" class="fixed__submit btn__yellow btn__link" value="Отправить" name="submit">
       </form>
@@ -342,7 +342,7 @@
           <div class="technics__item">
             <a href="#"></a>
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/2.png" alt="" />
             </div>
 
             <p class="technics__name">Буры</p>
@@ -357,7 +357,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/3.png" alt="" />
             </div>
 
             <p class="technics__name">Мини техника</p>
@@ -372,7 +372,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/4.png" alt="" />
             </div>
 
             <p class="technics__name">Самосвалы</p>
@@ -387,7 +387,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/5.png" alt="" />
             </div>
 
             <p class="technics__name">Тралы и низкорамные площадки</p>
@@ -402,7 +402,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/6.png" alt="" />
             </div>
 
             <p class="technics__name">Фронтальные погрузчики</p>
@@ -417,7 +417,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/7.png" alt="" />
             </div>
 
             <p class="technics__name">Колесные экскаваторы</p>
@@ -432,7 +432,7 @@
             <a href="#"></a>
 
             <div class="technics__img">
-              <img src="./img/technics/1.png" alt="" />
+              <img src="./img/technics/8.png" alt="" />
             </div>
 
             <p class="technics__name">Экскаваторы-погрузчики</p>
@@ -529,28 +529,33 @@
           </div>
 
           <div class="catalog__sort">
-            <span>Сортировать по</span
-            ><img src="./img/catalog/arrow-down.svg" alt="" />
+            <span class="catalog__sort-type">Сортировать по</span>
+            <img src="./img/catalog/arrow-down.svg" alt="" class="catalog__arrow" />
+            <div class="catalog__sort-list">
+              <p class="catalog__sort-item" data-type="По популярности">Популярности</p>
+              <p class="catalog__sort-item" data-type="По возрастанию">Возрастанию цены</p>
+              <p class="catalog__sort-item" data-type="По убыванию">Убыванию цены</p>
+            </div>
           </div>
         </div>
 
         <ul class="catalog__categories">
-          <li class="catalog__category">Все</li>
-          <li class="catalog__category">Экскаваторы-погрузчики</li>
-          <li class="catalog__category">Самосвалы</li>
-          <li class="catalog__category">Бульдозеры</li>
-          <li class="catalog__category">Гусеничный экскаватор</li>
-          <li class="catalog__category">Погрузчик</li>
-          <li class="catalog__category">Фронтальный погрузчик</li>
-          <li class="catalog__category">Колесный экскаватор</li>
-          <li class="catalog__category">Тралы и низкорамные площадки</li>
-          <li class="catalog__category">Грунтовой каток</li>
-          <li class="catalog__category">Автокран</li>
-          <li class="catalog__category">Автогрейдер</li>
-          <li class="catalog__category">Телескопический погрузчик</li>
-          <li class="catalog__category">Мини-техника</li>
-          <li class="catalog__category">Гидромолоты</li>
-          <li class="catalog__category">Ямобур (буровая техника)</li>
+          <li class="catalog__category active" data-type="all">Все</li>
+          <li class="catalog__category" data-type="excavator">Экскаваторы-погрузчики</li>
+          <li class="catalog__category" data-type="tipper">Самосвалы</li>
+          <li class="catalog__category" data-type="dozer">Бульдозеры</li>
+          <li class="catalog__category" data-type="digger">Гусеничный экскаватор</li>
+          <li class="catalog__category" data-type="loader">Погрузчик</li>
+          <li class="catalog__category" data-type="f-loader">Фронтальный погрузчик</li>
+          <li class="catalog__category" data-type="wheel-digger">Колесный экскаватор</li>
+          <li class="catalog__category" data-type="flail">Тралы и низкорамные площадки</li>
+          <li class="catalog__category" data-type="truck">Грунтовой каток</li>
+          <li class="catalog__category" data-type="crane">Автокран</li>
+          <li class="catalog__category" data-type="grader">Автогрейдер</li>
+          <li class="catalog__category" data-type="telescopic-loader">Телескопический погрузчик</li>
+          <li class="catalog__category" data-type="mini">Мини-техника</li>
+          <li class="catalog__category" data-type="hydraulic-hammer">Гидромолоты</li>
+          <li class="catalog__category" data-type="drilling-equipment">Ямобур (буровая техника)</li>
         </ul>
         <!-- /.catalog__categories -->
 
@@ -561,40 +566,40 @@
         <button class="catalog__more btn__link btn__grey">
           Показать больше
         </button>
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /.catalog -->
+      </div><!-- /.container -->
+    </section><!-- /.catalog -->
 
     <section class="feedback first__feedback">
       <div class="container">
-        <h2 class="feedback__title block__title">Обратная связь</h2>
+        <div class="feedback__wrapper">
 
-        <p class="feedback__subtitle">
-          Нет времени выбирать? Заполните заявку и сотрудник вас
-          проконсультирует.
-        </p>
+          <h2 class="feedback__title block__title">Обратная связь</h2>
 
-        <form action="#" class="feedback__form" id="second" novalidate>
-          <p class="error__message">Заполните все обязательные для заполнения поля</p>
-          <div class="feedback__item">
-            <input type="text" class="feedback__name" placeholder="Имя*" name="name" minlength="2" required/>
-          </div>
-          <div class="feedback__item">
-            <input type="text" class="feedback__phone" placeholder="Телефон*"  name="phone" minlength="7" required/>
-          </div>
-          <input
-            type="submit"
-            class="feedback__submit btn__link btn__yellow"
-            value="Отправить"
-            name="submit"
-            id="second_btn"
-          />
-        </form>
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /.feedback -->
+          <p class="feedback__subtitle">
+            Нет времени выбирать? Заполните заявку и сотрудник вас
+            проконсультирует.
+          </p>
+  
+          <form action="#" class="feedback__form" id="second" novalidate>
+            <p class="error__message">Заполните все обязательные для заполнения поля. Номер телефона должен быть не короче 9 символов.</p>
+            <div class="feedback__item">
+              <input type="text" class="feedback__name" placeholder="Имя*" name="name" minlength="2" required/>
+            </div>
+            <div class="feedback__item">
+              <input type="text" class="feedback__phone" placeholder="Телефон*"  name="phone" minlength="9" required/>
+            </div>
+            <input
+              type="submit"
+              class="feedback__submit btn__link btn__yellow"
+              value="Отправить"
+              name="submit"
+              id="second_btn"
+            />
+          </form>
+
+        </div><!-- /.feedback__wrapper -->
+      </div><!-- /.container -->
+    </section><!-- /.feedback -->
 
     <section class="services">
       <div class="container">
@@ -1420,12 +1425,12 @@
         </p>
 
         <form action="#" class="feedback__form" novalidate>
-          <p class="error__message">Заполните все обязательные для заполнения поля</p>
+          <p class="error__message">Заполните все обязательные для заполнения поля. Номер телефона должен быть не короче 9 символов.</p>
           <div class="feedback__item">
             <input type="text" class="feedback__name" placeholder="Имя*" name="name" required/>
           </div>
           <div class="feedback__item">
-            <input type="text" class="feedback__phone" placeholder="Телефон*" name="phone" minlength="7" required/>
+            <input type="text" class="feedback__phone" placeholder="Телефон*" name="phone" minlength="9" required/>
           </div>
           <input
             type="submit"
