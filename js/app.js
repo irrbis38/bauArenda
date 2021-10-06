@@ -180,41 +180,6 @@ feedbackPhoneAll.forEach(removeOnFocus);
 
 // КАТАЛОГ
 
-// работа меню для выбора типа сортировки
-
-const catalogSort = document.querySelector(".catalog__sort");
-const catalogSortList = document.querySelector(".catalog__sort-list");
-const catalogSortItems = document.querySelectorAll(".catalog__sort-item");
-const catalogSortType = document.querySelector(".catalog__sort-type");
-let sortingType = "popularity";
-
-const hideCatalogSortList = () => {
-  catalogSortList.classList.remove("active");
-};
-
-catalogSort.addEventListener("click", () => {
-  catalogSortList.classList.add("active");
-});
-
-window.addEventListener("click", (e) => {
-  if (
-    !e.target.matches(".catalog__sort") &&
-    !e.target.matches(".catalog__sort-list") &&
-    !e.target.matches(".catalog__sort-type") &&
-    !e.target.matches(".catalog__arrow")
-  ) {
-    hideCatalogSortList();
-  }
-});
-
-catalogSortItems.forEach((el) => {
-  el.addEventListener("click", (e) => {
-    catalogSortType.textContent = e.target.dataset.text;
-    sortingType = e.target.dataset.type;
-    hideCatalogSortList();
-  });
-});
-
 const catalogWrapper = document.querySelector(".catalog__wrapper");
 let counter = 0;
 
@@ -232,7 +197,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 150,
+      popularity: 1,
     },
     {
       imgName: "1.jpg",
@@ -243,7 +209,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 200,
+      popularity: 1,
     },
     {
       imgName: "1.jpg",
@@ -254,7 +221,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 130,
+      popularity: 2,
     },
     {
       imgName: "1.jpg",
@@ -265,7 +233,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Самосвалы
@@ -279,7 +248,20 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 150,
+      popularity: 1,
+    },
+    {
+      imgName: "2.jpg",
+      header: "Аренда самосвалов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: 100,
+      popularity: 2,
     },
   ],
   // Бульдозеры
@@ -293,7 +275,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Гусеничные экскаваторы
@@ -307,7 +290,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Погрузчик
@@ -321,7 +305,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Фронтальный погрузчик
@@ -335,7 +320,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Колесный экскаватор
@@ -349,7 +335,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Тралы и низкорамные площадки
@@ -363,7 +350,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Грунтовой каток
@@ -377,7 +365,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Автокран
@@ -391,7 +380,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Автогрейдер
@@ -405,7 +395,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Телескопический погрузчик
@@ -419,7 +410,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Мини-техника
@@ -433,7 +425,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Гидромолоты
@@ -447,7 +440,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 1,
     },
   ],
   // Буровая техника
@@ -461,7 +455,8 @@ let data = {
       value2: "2690 мм",
       name3: "Мощность двигателя",
       value3: "100 л.с.",
-      price: "100",
+      price: 100,
+      popularity: 2,
     },
   ],
 };
@@ -521,9 +516,6 @@ const concatAllCategories = (tech) => {
   return union;
 };
 
-// создание и инициализация стартовой категории каталога
-let category = "all";
-
 // переключение категории
 
 const switchCategory = (name, tech) => {
@@ -536,7 +528,90 @@ const switchCategory = (name, tech) => {
   return cat;
 };
 
+// создание и инициализация стартовой категории каталога
+let category = "all";
+let catalog = createElement(switchCategory(category, data));
+
 const catalolgCategories = document.querySelectorAll(".catalog__category");
+
+// сортировка категорий
+
+const compareMin = (a, b) => {
+  if (a.price > b.price) return 1;
+  if (a.price == b.price) return 0;
+  if (a.price < b.price) return -1;
+};
+
+const compareMax = (a, b) => {
+  if (a.price < b.price) return 1;
+  if (a.price == b.price) return 0;
+  if (a.price > b.price) return -1;
+};
+
+const sortByPopularity = (a, b) => {
+  if (a.popularity < b.popularity) return 1;
+  if (a.popularity == b.popularity) return 0;
+  if (a.popularity > b.popularity) return -1;
+};
+
+const sortCatalog = (tech, type) => {
+  if (type === "fromMaxToMin") {
+    return tech.sort(compareMax);
+  } else if (type === "fromMinToMax") {
+    return tech.sort(compareMin);
+  } else if (type === "popularity") {
+    return tech.sort(sortByPopularity);
+  } else {
+    return switchCategory(category, data);
+  }
+};
+
+// работа меню для выбора типа сортировки
+
+const catalogSort = document.querySelector(".catalog__sort");
+const catalogSortList = document.querySelector(".catalog__sort-list");
+const catalogSortItems = document.querySelectorAll(".catalog__sort-item");
+const catalogSortType = document.querySelector(".catalog__sort-type");
+let sortingType = "start";
+
+const hideCatalogSortList = () => {
+  catalogSortList.classList.remove("active");
+};
+
+catalogSort.addEventListener("click", () => {
+  catalogSortList.classList.add("active");
+});
+
+window.addEventListener("click", (e) => {
+  if (
+    !e.target.matches(".catalog__sort") &&
+    !e.target.matches(".catalog__sort-list") &&
+    !e.target.matches(".catalog__sort-type") &&
+    !e.target.matches(".catalog__arrow")
+  ) {
+    hideCatalogSortList();
+  }
+});
+
+catalogSortItems.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    catalogSortType.textContent = e.target.dataset.text;
+
+    if (sortingType === e.target.dataset.type) {
+      hideCatalogSortList();
+    } else {
+      sortingType = e.target.dataset.type;
+      hideCatalogSortList();
+
+      counter = 0;
+      catalogWrapper.innerHTML = "";
+      catalog = createElement(
+        sortCatalog(switchCategory(category, data), sortingType)
+      );
+      addToPage(catalog);
+    }
+  });
+});
 
 // отображение при переключении категорий
 
@@ -546,12 +621,19 @@ catalolgCategories.forEach((el) => {
       el.classList.remove("active");
     });
     e.target.classList.add("active");
-    category = e.target.dataset.type;
-    // switchCategory(category, data);
 
-    counter = 0;
-    catalogWrapper.innerHTML = "";
-    addToPage(createElement(switchCategory(category, data)));
+    if (category === e.target.dataset.type) {
+      return;
+    } else {
+      category = e.target.dataset.type;
+
+      counter = 0;
+      catalogWrapper.innerHTML = "";
+      catalog = createElement(
+        sortCatalog(switchCategory(category, data), sortingType)
+      );
+      addToPage(catalog);
+    }
   });
 });
 
@@ -560,7 +642,7 @@ catalolgCategories.forEach((el) => {
 const addToPage = (sortedItems) => {
   for (let i = counter; i < counter + 16; i++) {
     if (sortedItems[i] !== undefined) {
-      catalogWrapper.appendChild(sortedItems[i]);
+      catalogWrapper.append(sortedItems[i]);
     }
   }
   counter += 16;
@@ -570,7 +652,7 @@ const addToPage = (sortedItems) => {
 
 const catalogMore = document.querySelector(".catalog__more");
 catalogMore.addEventListener("click", () => {
-  addToPage(createElement(switchCategory(category, data)));
+  addToPage(catalog);
 });
 
 // первоначальное отображение каталога
