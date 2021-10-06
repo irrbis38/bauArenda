@@ -180,281 +180,304 @@ feedbackPhoneAll.forEach(removeOnFocus);
 
 // КАТАЛОГ
 
+// работа меню для выбора типа сортировки
+
+const catalogSort = document.querySelector(".catalog__sort");
+const catalogSortList = document.querySelector(".catalog__sort-list");
+const catalogSortItems = document.querySelectorAll(".catalog__sort-item");
+const catalogSortType = document.querySelector(".catalog__sort-type");
+let sortingType = "popularity";
+
+const hideCatalogSortList = () => {
+  catalogSortList.classList.remove("active");
+};
+
+catalogSort.addEventListener("click", () => {
+  catalogSortList.classList.add("active");
+});
+
+window.addEventListener("click", (e) => {
+  if (
+    !e.target.matches(".catalog__sort") &&
+    !e.target.matches(".catalog__sort-list") &&
+    !e.target.matches(".catalog__sort-type") &&
+    !e.target.matches(".catalog__arrow")
+  ) {
+    hideCatalogSortList();
+  }
+});
+
+catalogSortItems.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    catalogSortType.textContent = e.target.dataset.text;
+    sortingType = e.target.dataset.type;
+    hideCatalogSortList();
+  });
+});
+
 const catalogWrapper = document.querySelector(".catalog__wrapper");
 let counter = 0;
 
 // Содержимое каталога
 
-// Экскаваторы-погрузчики
-let excavator = [
-  {
-    imgName: "1",
-    header: "Аренда экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-  {
-    imgName: "1",
-    header: "Аренда экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-  {
-    imgName: "1",
-    header: "Аренда экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-  {
-    imgName: "1",
-    header: "Аренда экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Самосвалы
-let tipper = [
-  {
-    imgName: "2",
-    header: "Аренда самосвалов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Бульдозеры
-let dozer = [
-  {
-    imgName: "3",
-    header: "Аренда бульдозеров CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Гусеничный экскаватор
-let digger = [
-  {
-    imgName: "4",
-    header: "Аренда гусинечных экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Погрузчик
-let loader = [
-  {
-    imgName: "5",
-    header: "Аренда погрузчиков CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Фронтальный погрузчик
-let fLoader = [
-  {
-    imgName: "6",
-    header: "Аренда фронтальных погрузчиков CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Колесный экскаватор
-let wheelDigger = [
-  {
-    imgName: "7",
-    header: "Аренда колёсных экскаваторов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Тралы и низкорамные площадки
-let flail = [
-  {
-    imgName: "8",
-    header: "Аренда тралов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Грунтовой каток
-let truck = [
-  {
-    imgName: "9",
-    header: "Аренда грунтовых катков CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Автокран
-let crane = [
-  {
-    imgName: "10",
-    header: "Аренда автокранов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Автогрейдер
-let grader = [
-  {
-    imgName: "11",
-    header: "Аренда автогрейдеров CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Телескопический погрузчик
-let telescopicLoader = [
-  {
-    imgName: "12",
-    header: "Аренда телескопических погрузчиков CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Мини-техника
-let mini = [
-  {
-    imgName: "13",
-    header: "Аренда мини-техники CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Гидромолоты
-let hydraulicHammer = [
-  {
-    imgName: "14",
-    header: "Аренда гидромолотов CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
-
-// Буровая техника
-let drillingEquipment = [
-  {
-    imgName: "15",
-    header: "Аренда буровой техники CATERPILLAR",
-    name1: "Объём фронтального ковша",
-    value1: "1,3 м3",
-    name2: "Высота выгрузки",
-    value2: "2690 мм",
-    name3: "Мощность двигателя",
-    value3: "100 л.с.",
-    price: "100",
-  },
-];
+let data = {
+  // Экскаваторы-погрузчики
+  excavator: [
+    {
+      imgName: "1.jpg",
+      header: "Аренда экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+    {
+      imgName: "1.jpg",
+      header: "Аренда экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+    {
+      imgName: "1.jpg",
+      header: "Аренда экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+    {
+      imgName: "1.jpg",
+      header: "Аренда экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Самосвалы
+  tipper: [
+    {
+      imgName: "2.jpg",
+      header: "Аренда самосвалов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Бульдозеры
+  dozer: [
+    {
+      imgName: "3.jpg",
+      header: "Аренда бульдозеров CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Гусеничные экскаваторы
+  digger: [
+    {
+      imgName: "4.jpg",
+      header: "Аренда гусинечных экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Погрузчик
+  loader: [
+    {
+      imgName: "5.jpg",
+      header: "Аренда погрузчиков CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Фронтальный погрузчик
+  fLoader: [
+    {
+      imgName: "6.jpg",
+      header: "Аренда фронтальных погрузчиков CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Колесный экскаватор
+  wheelDigger: [
+    {
+      imgName: "7.jpg",
+      header: "Аренда колёсных экскаваторов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Тралы и низкорамные площадки
+  flail: [
+    {
+      imgName: "8.jpg",
+      header: "Аренда тралов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Грунтовой каток
+  truck: [
+    {
+      imgName: "9.jpg",
+      header: "Аренда грунтовых катков CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Автокран
+  crane: [
+    {
+      imgName: "10.jpg",
+      header: "Аренда автокранов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Автогрейдер
+  grader: [
+    {
+      imgName: "11.jpg",
+      header: "Аренда автогрейдеров CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Телескопический погрузчик
+  telescopicLoader: [
+    {
+      imgName: "12.jpg",
+      header: "Аренда телескопических погрузчиков CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Мини-техника
+  mini: [
+    {
+      imgName: "13.jpg",
+      header: "Аренда мини-техники CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Гидромолоты
+  hydraulicHammer: [
+    {
+      imgName: "14.jpg",
+      header: "Аренда гидромолотов CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+  // Буровая техника
+  drillingEquipment: [
+    {
+      imgName: "15.jpg",
+      header: "Аренда буровой техники CATERPILLAR",
+      name1: "Объём фронтального ковша",
+      value1: "1,3 м3",
+      name2: "Высота выгрузки",
+      value2: "2690 мм",
+      name3: "Мощность двигателя",
+      value3: "100 л.с.",
+      price: "100",
+    },
+  ],
+};
 
 // Создание карточки каталога
 
 const createElement = (arr) => {
-  let catalog = [];
+  let catalogItem = [];
 
   for (let i = 0; i < arr.length; i++) {
-    catalog[i] = document.createElement("DIV");
-    catalog[i].classList.add("catalog__item");
-    catalog[i].innerHTML = `<a href="#" class="catalog__link"></a>
+    catalogItem[i] = document.createElement("DIV");
+    catalogItem[i].classList.add("catalog__item");
+    catalogItem[i].innerHTML = `<a href="#" class="catalog__link"></a>
 
     <div class="catalog__img">
-      <img src="./img/catalog/${arr[i].imgName}.jpg" alt="экскаватор" />
+      <img src="./img/catalog/${arr[i].imgName}" alt="экскаватор" />
     </div>
 
     <a href="#" class="catalog__button">Подробнее</a>
@@ -485,90 +508,37 @@ const createElement = (arr) => {
     <!-- /.catalog__info -->`;
   }
 
-  return catalog;
+  return catalogItem;
 };
 
-// выбор категории каталога
+// выбор всех категории каталога
 
-const concatCategories = () => {
-  union = excavator.concat(
-    tipper,
-    dozer,
-    digger,
-    loader,
-    fLoader,
-    wheelDigger,
-    flail,
-    truck,
-    crane,
-    grader,
-    telescopicLoader,
-    mini,
-    hydraulicHammer,
-    drillingEquipment
-  );
+const concatAllCategories = (tech) => {
+  let union = [];
+  for (let key in tech) {
+    union = [...union, ...tech[key]];
+  }
   return union;
 };
-let catalog = concatCategories();
+
+// создание и инициализация стартовой категории каталога
 let category = "all";
-let items = createElement(catalog);
 
 // переключение категории
 
-const switchCategory = (name) => {
-  switch (name) {
-    case "all":
-      catalog = concatCategories();
-      break;
-    case "excavator":
-      catalog = [...excavator];
-      break;
-    case "tipper":
-      catalog = [...tipper];
-      break;
-    case "dozer":
-      catalog = [...dozer];
-      break;
-    case "digger":
-      catalog = [...digger];
-      break;
-    case "loader":
-      catalog = [...loader];
-      break;
-    case "f-loader":
-      catalog = [...fLoader];
-      break;
-    case "wheel-digger":
-      catalog = [...wheelDigger];
-      break;
-    case "flail":
-      catalog = [...flail];
-      break;
-    case "truck":
-      catalog = [...truck];
-      break;
-    case "crane":
-      catalog = [...crane];
-      break;
-    case "grader":
-      catalog = [...grader];
-      break;
-    case "telescopic-loader":
-      catalog = [...telescopicLoader];
-      break;
-    case "mini":
-      catalog = [...mini];
-      break;
-    case "hydraulic-hammer":
-      catalog = [...hydraulicHammer];
-      break;
-    case "drilling-equipment":
-      catalog = [...drillingEquipment];
-      break;
+const switchCategory = (name, tech) => {
+  let cat = [];
+  if (name in tech) {
+    cat = [...tech[name]];
+  } else {
+    cat = concatAllCategories(tech);
   }
+  return cat;
 };
 
 const catalolgCategories = document.querySelectorAll(".catalog__category");
+
+// отображение при переключении категорий
 
 catalolgCategories.forEach((el) => {
   el.addEventListener("click", (e) => {
@@ -577,53 +547,20 @@ catalolgCategories.forEach((el) => {
     });
     e.target.classList.add("active");
     category = e.target.dataset.type;
-    switchCategory(category);
+    // switchCategory(category, data);
 
     counter = 0;
     catalogWrapper.innerHTML = "";
-    addToPage(createElement(catalog));
-  });
-});
-
-//сортировка каталога
-
-const catalogSort = document.querySelector(".catalog__sort");
-const catalogSortList = document.querySelector(".catalog__sort-list");
-const catalogSortItems = document.querySelectorAll(".catalog__sort-item");
-const catalogSortType = document.querySelector(".catalog__sort-type");
-
-const hideCatalogSortList = () => {
-  catalogSortList.classList.remove("active");
-};
-
-catalogSort.addEventListener("click", () => {
-  catalogSortList.classList.add("active");
-});
-
-window.addEventListener("click", (e) => {
-  if (
-    !e.target.matches(".catalog__sort") &&
-    !e.target.matches(".catalog__sort-list") &&
-    !e.target.matches(".catalog__sort-type") &&
-    !e.target.matches(".catalog__arrow")
-  ) {
-    hideCatalogSortList();
-  }
-});
-
-catalogSortItems.forEach((el) => {
-  el.addEventListener("click", (e) => {
-    catalogSortType.textContent = e.target.dataset.type;
-    hideCatalogSortList();
+    addToPage(createElement(switchCategory(category, data)));
   });
 });
 
 // отрисовка каталога
 
-const addToPage = (items) => {
+const addToPage = (sortedItems) => {
   for (let i = counter; i < counter + 16; i++) {
-    if (items[i] !== undefined) {
-      catalogWrapper.appendChild(items[i]);
+    if (sortedItems[i] !== undefined) {
+      catalogWrapper.appendChild(sortedItems[i]);
     }
   }
   counter += 16;
@@ -633,9 +570,9 @@ const addToPage = (items) => {
 
 const catalogMore = document.querySelector(".catalog__more");
 catalogMore.addEventListener("click", () => {
-  addToPage(items);
+  addToPage(createElement(switchCategory(category, data)));
 });
 
 // первоначальное отображение каталога
 
-addToPage(items);
+addToPage(createElement(switchCategory(category, data)));
