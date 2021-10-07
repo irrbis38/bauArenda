@@ -108,7 +108,53 @@ window.onload = () => {
   for (let elem of elements) {
     observer.observe(elem);
   }
+
+  //===== ПОИСК
+
+  // Показ / скрытие окна поиска
+
+  const headerSearch = document.querySelector(".header__search");
+  const headerSearchFrame = document.querySelector(".header__search-frame");
+  const headerSearchCloser = document.querySelector(".header__search-closer");
+  const headerSearchInput = document.querySelector(".header__search-input");
+
+  const closeHeaderSearch = () => {
+    headerSearchFrame.classList.remove("active");
+    body.classList.remove("lock");
+    headerSearchInput.value = "";
+  };
+
+  headerSearch.addEventListener("click", () => {
+    headerSearchFrame.classList.add("active");
+    body.classList.add("lock");
+    window.addEventListener("keydown", (e) => {
+      if (e.code === "Escape") {
+        closeHeaderSearch();
+      }
+    });
+  });
+
+  headerSearchCloser.addEventListener("click", closeHeaderSearch);
 };
+
+// Переключение категории поиска
+
+const headerSearchCategories = document.querySelectorAll(
+  ".header__search-category"
+);
+
+headerSearchCategories.forEach((el) => {
+  el.addEventListener("click", () => {
+    if (!el.classList.contains("active")) {
+      headerSearchCategories.forEach((elem) => {
+        elem.classList.remove("active");
+      });
+      el.classList.add("active");
+    }
+  });
+});
+
+// ===== ФОРМЫ
 
 // Отправка форм, расположеных на странице
 

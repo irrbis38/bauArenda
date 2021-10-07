@@ -177,7 +177,7 @@ input {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   &.active {
     visibility: visible;
@@ -224,25 +224,14 @@ input {
   height: 36px;
   background: #f5f7fb;
   border-radius: 100px;
+  cursor: pointer;
 
   & img {
     margin: 0 14px 0 30px;
   }
 
-  & input {
+  & p {
     flex: 1;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #1f1e1d;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    appearance: none;
-  }
-
-  & input::placeholder {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -311,10 +300,6 @@ input {
   & svg {
     cursor: pointer;
   }
-
-  & path {
-    transition: fill 0.2s ease-in-out;
-  }
 }
 
 .header__whatsapp,
@@ -328,6 +313,10 @@ input {
     bottom: 0;
     left: 0;
     z-index: 2;
+  }
+
+  & path {
+    transition: fill 0.2s ease-in-out;
   }
 }
 
@@ -346,6 +335,158 @@ input {
 
 .header__item:hover .header__viber path:first-child {
   fill: #7b519c;
+}
+
+/*===== header search styles =====*/
+
+.header__search-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.12);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.header__search-field {
+  position: relative;
+  width: 664px;
+  height: 475px;
+  margin: 52px auto 0;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.header__search-closer {
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.header__search-top {
+  width: 100%;
+  height: 94px;
+  padding: 21px 16px 0 16px;
+  box-shadow: 0px 4px 15px rgba(22, 37, 55, 0.1);
+}
+
+.header__search-request {
+  & input {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1f1e1d;
+  }
+
+  & input::placeholder {
+    font-size: 14px;
+    line-height: 17px;
+    color: #999;
+  }
+}
+
+.header__search-categories {
+  display: flex;
+}
+
+.header__search-category {
+  position: relative;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    color: #1f1e1d;
+  }
+
+  &.active::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 1000px;
+    background-color: #1f1e1d;
+  }
+}
+
+.header__search-output {
+  padding: 4px 16px;
+}
+
+.header__search-init {
+  display: none;
+  padding-top: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1f1e1d;
+
+  &.active {
+    display: block;
+  }
+}
+
+.header__search-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0 16px;
+  border-bottom: 1px solid rgba(227, 227, 227, 0.5);
+  color: #1f1e1d;
+  transition: color 0.2s ease-in-out;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    color: #ffcb09;
+  }
+
+  & a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    outline: none;
+  }
+}
+
+.header__search-name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.header__search-price {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /*===== intro styles =====*/
