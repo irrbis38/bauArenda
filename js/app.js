@@ -114,45 +114,103 @@ window.onload = () => {
   // Показ / скрытие окна поиска
 
   const headerSearch = document.querySelector(".header__search");
+  const headerSearchSmall = document.querySelector(".header__search-small");
   const headerSearchFrame = document.querySelector(".header__search-frame");
   const headerSearchCloser = document.querySelector(".header__search-closer");
   const headerSearchInput = document.querySelector(".header__search-input");
 
-  const closeHeaderSearch = () => {
-    headerSearchFrame.classList.remove("active");
-    body.classList.remove("lock");
-    headerSearchInput.value = "";
-  };
-
-  headerSearch.addEventListener("click", () => {
+  const openHeaderSearch = () => {
     headerSearchFrame.classList.add("active");
     body.classList.add("lock");
+    if (headerBurger.classList.contains("active")) {
+      acc.forEach((el) => {
+        el.lastElementChild.style.maxHeight = null;
+      });
+    }
+    headerBurger.classList.remove("active");
+    burgerNav.classList.remove("active");
     window.addEventListener("keydown", (e) => {
       if (e.code === "Escape") {
         closeHeaderSearch();
       }
     });
-  });
+  };
+
+  const closeHeaderSearch = () => {
+    headerSearchFrame.classList.remove("active");
+    body.classList.remove("lock");
+    headerSearchInput.value = "";
+    headerBurger.classList.remove("active");
+    burgerNav.classList.remove("active");
+  };
+
+  headerSearch.addEventListener("click", openHeaderSearch);
+
+  headerSearchSmall.addEventListener("click", openHeaderSearch);
 
   headerSearchCloser.addEventListener("click", closeHeaderSearch);
-};
 
-// Переключение категории поиска
+  // Переключение категории поиска
 
-const headerSearchCategories = document.querySelectorAll(
-  ".header__search-category"
-);
+  const headerSearchCategories = document.querySelectorAll(
+    ".header__search-category"
+  );
 
-headerSearchCategories.forEach((el) => {
-  el.addEventListener("click", () => {
-    if (!el.classList.contains("active")) {
-      headerSearchCategories.forEach((elem) => {
-        elem.classList.remove("active");
-      });
-      el.classList.add("active");
-    }
+  headerSearchCategories.forEach((el) => {
+    el.addEventListener("click", () => {
+      if (!el.classList.contains("active")) {
+        headerSearchCategories.forEach((elem) => {
+          elem.classList.remove("active");
+        });
+        el.classList.add("active");
+      }
+    });
   });
-});
+
+  // ===== БУРГЕР_МЕНЮ
+
+  const headerBurger = document.querySelector(".header__burger");
+  const burgerNav = document.querySelector(".burger__nav");
+
+  headerBurger.addEventListener("click", () => {
+    if (headerBurger.classList.contains("active")) {
+      acc.forEach((el) => {
+        el.lastElementChild.style.maxHeight = null;
+      });
+    }
+    headerBurger.classList.toggle("active");
+    burgerNav.classList.toggle("active");
+    body.classList.toggle("lock");
+  });
+
+  // Аккордеон в бургер-меню
+
+  let acc = document.querySelectorAll(".acc");
+
+  acc.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      let panel = e.target.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  });
+
+  // for (let i = 0; i < acc.length; i++) {
+  //   acc[i].addEventListener("click", function (e) {
+  //     e.target.classList.toggle("active");
+  //     console.log(e);
+  //     let panel = this.nextElementSibling;
+  //     if (panel.style.maxHeight) {
+  //       panel.style.maxHeight = null;
+  //     } else {
+  //       panel.style.maxHeight = panel.scrollHeight + "px";
+  //     }
+  //   });
+  // }
+};
 
 // ===== ФОРМЫ
 
