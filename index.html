@@ -290,16 +290,16 @@
           </ul><!-- /.burger__list -->
   
           <ul class="burger__contacts">
-            <li class="burger__contact-item">
+            <li class="burger__contact-item burger__contact-1">
               <a href="mailto:info@bauarenda.by">info@bauarenda.by</a>
             </li>
-            <li class="burger__contact-item">
+            <li class="burger__contact-item burger__contact-2">
               <a href="tel:+375297477171">+375 29 747-71-71</a>
             </li>
-            <li class="burger__contact-item">
+            <li class="burger__contact-item burger__contact-3">
               <a href="tel:+375173744808">+375 17 374-48-08</a>
             </li>
-            <li class="burger__contact-item social">
+            <li class="burger__contact-item social burger__contact-4">
   
               <a href="tel:+375291622365">+375 29 162-23-65</a>
   
@@ -507,7 +507,9 @@
 
     <div class="fixed__feedback">
       <div class="fixed__close">
-        <img src="./img/fixed/close.svg" alt="закрыть">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 1.57617L22.5 22.5762M22.5 1.57617L1.5 22.5762" stroke="white" stroke-width="2"/>
+        </svg>
       </div>
       <h3 class="fixed__feedbackTitle">Обратная связь</h3>
       <form action="#" class="fixed__form" novalidate>
@@ -745,27 +747,31 @@
           </div>
         </div>
 
-        <ul class="catalog__categories" onpointerdown="return false" onselectstart="return false">
-          <li class="catalog__category active" data-type="all">Все</li>
-          <li class="catalog__category" data-type="excavator">Экскаваторы-погрузчики</li>
-          <li class="catalog__category" data-type="tipper">Самосвалы</li>
-          <li class="catalog__category" data-type="dozer">Бульдозеры</li>
-          <li class="catalog__category" data-type="digger">Гусеничный экскаватор</li>
-          <li class="catalog__category" data-type="loader">Погрузчик</li>
-          <li class="catalog__category" data-type="fLoader">Фронтальный погрузчик</li>
-          <li class="catalog__category" data-type="wheelDigger">Колесный экскаватор</li>
-          <li class="catalog__category" data-type="flail">Тралы и низкорамные площадки</li>
-          <li class="catalog__category" data-type="truck">Грунтовой каток</li>
-          <li class="catalog__category" data-type="crane">Автокран</li>
-          <li class="catalog__category" data-type="grader">Автогрейдер</li>
-          <li class="catalog__category" data-type="telescopicLoader">Телескопический погрузчик</li>
-          <li class="catalog__category" data-type="mini">Мини-техника</li>
-          <li class="catalog__category" data-type="hydraulicHammer">Гидромолоты</li>
-          <li class="catalog__category" data-type="drillingEquipment">Ямобур (буровая техника)</li>
-        </ul>
-        <!-- /.catalog__categories -->
+        <div class="catalog__categories-wrapper">
 
-        <div class="clearfix"></div>
+          <ul class="catalog__categories" onpointerdown="return false" onselectstart="return false">
+            <li class="catalog__category active" data-type="all">Все</li>
+            <li class="catalog__category" data-type="excavator">Экскаваторы-погрузчики</li>
+            <li class="catalog__category" data-type="tipper">Самосвалы</li>
+            <li class="catalog__category" data-type="dozer">Бульдозеры</li>
+            <li class="catalog__category" data-type="digger">Гусеничный экскаватор</li>
+            <li class="catalog__category" data-type="loader">Погрузчик</li>
+            <li class="catalog__category" data-type="fLoader">Фронтальный погрузчик</li>
+            <li class="catalog__category" data-type="wheelDigger">Колесный экскаватор</li>
+            <li class="catalog__category" data-type="flail">Тралы и низкорамные площадки</li>
+            <li class="catalog__category" data-type="truck">Грунтовой каток</li>
+            <li class="catalog__category" data-type="crane">Автокран</li>
+            <li class="catalog__category" data-type="grader">Автогрейдер</li>
+            <li class="catalog__category" data-type="telescopicLoader">Телескопический погрузчик</li>
+            <li class="catalog__category" data-type="mini">Мини-техника</li>
+            <li class="catalog__category" data-type="hydraulicHammer">Гидромолоты</li>
+            <li class="catalog__category" data-type="drillingEquipment">Ямобур (буровая техника)</li>
+          </ul>
+          <!-- /.catalog__categories -->
+  
+          <div class="clearfix"></div>
+
+        </div><!-- /.catalog__categories-wrapper -->
 
         <div class="catalog__wrapper"></div>
 
@@ -916,7 +922,7 @@
 
             <div class="advantage__item">
               <div class="advantage__icon">
-                <img src="./img/advantage/1.svg" alt="преимущество" />
+                <img src="./img/advantage/2.svg" alt="преимущество" />
               </div>
 
               <h4 class="advantage__header">24/7 мы работаем всегда!</h4>
@@ -928,7 +934,7 @@
 
             <div class="advantage__item">
               <div class="advantage__icon">
-                <img src="./img/advantage/1.svg" alt="преимущество" />
+                <img src="./img/advantage/3.svg" alt="преимущество" />
               </div>
 
               <h4 class="advantage__header">40% экономии</h4>
@@ -942,7 +948,7 @@
 
             <div class="advantage__item">
               <div class="advantage__icon">
-                <img src="./img/advantage/1.svg" alt="преимущество" />
+                <img src="./img/advantage/4.svg" alt="преимущество" />
               </div>
 
               <h4 class="advantage__header">37 наименований спецтехники</h4>
@@ -1414,14 +1420,13 @@
               Аренда строительной техники и других спецмашин доступна на
               различные сроки от нескольких часов до нескольких лет.
             </p>
-          </div>
-          <!-- /.reasons__item -->
-        </div>
-        <!-- /.reasons__wrapper -->
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /.reasons -->
+          </div><!-- /.reasons__item -->
+        </div><!-- /.reasons__wrapper -->
+        <p class="reasons__posttext">
+          Отличительная особенность компании «БауАренда» – готовность к обсуждению условий взаимовыгодного сотрудничества индивидуально с каждым клиентом. Широкий выбор типов и моделей оборудования в сочетании с гибкой ценовой политикой помогают нам подобрать для каждого клиента оптимальную схему сотрудничества, выгодную каждой стороне.
+        </p>
+      </div><!-- /.container -->
+    </section><!-- /.reasons -->
 
     <section class="machines">
       <div class="container">
@@ -1558,7 +1563,7 @@
               <div class="reviews__item swiper-slide">
                 <div class="reviews__preview">
                   <div class="reviews__img">
-                    <img src="./img/reviews/1.jpg" alt="отзыв" />
+                    <img src="./img/reviews/rev1.jpg" alt="отзыв" />
                   </div>
                 </div>
   
@@ -1582,7 +1587,7 @@
               <div class="reviews__item swiper-slide">
                 <div class="reviews__preview">
                   <div class="reviews__img">
-                    <img src="./img/reviews/1.jpg" alt="отзыв" />
+                    <img src="./img/reviews/rev2.jpg" alt="отзыв" />
                   </div>
                 </div>
   
@@ -1618,8 +1623,23 @@
           </div><!-- /.reviews__nav -->
         </div><!-- /.reviews__slider -->
       </div><!-- /.container -->
-    </section>
-    <!-- /.reviews -->
+
+      <div class="reviews__fullscreen">
+        <div class="reviews__fullscreen-wrapper">
+
+          <img class="reviews__fullscreen-img" src="./img/reviews/rev1.jpg" alt="скриншот отзыва">
+
+          <div class="reviews__fullscreen-closer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 1.57617L22.5 22.5762M22.5 1.57617L1.5 22.5762" stroke="white" stroke-width="2"/>
+            </svg>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /.reviews -->
 
     <section class="feedback second__feedback">
       <div class="container">

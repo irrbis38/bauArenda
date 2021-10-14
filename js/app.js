@@ -198,18 +198,40 @@ window.onload = () => {
     });
   });
 
-  // for (let i = 0; i < acc.length; i++) {
-  //   acc[i].addEventListener("click", function (e) {
-  //     e.target.classList.toggle("active");
-  //     console.log(e);
-  //     let panel = this.nextElementSibling;
-  //     if (panel.style.maxHeight) {
-  //       panel.style.maxHeight = null;
-  //     } else {
-  //       panel.style.maxHeight = panel.scrollHeight + "px";
-  //     }
-  //   });
-  // }
+  // скриншот отзыва на весь экран
+
+  const reviewsImages = document.querySelectorAll(".reviews__preview");
+  const reviewsFullscreen = document.querySelector(".reviews__fullscreen");
+  const reviewsFullscreenImg = document.querySelector(
+    ".reviews__fullscreen-img"
+  );
+
+  const reviewsFullscreenEscape = (e) => {
+    if ((e.code = "Escape")) {
+      reviewsFullscreen.classList.remove("active");
+      body.classList.remove("lock");
+      window.removeEventListener("keydown", reviewsFullscreenEscape);
+    }
+  };
+
+  reviewsImages.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      let elem = e.target.closest(".reviews__preview");
+      let src = elem.firstElementChild.firstElementChild.getAttribute("src");
+      reviewsFullscreenImg.setAttribute("src", src);
+      reviewsFullscreen.classList.add("active");
+      body.classList.add("lock");
+
+      window.addEventListener("keydown", reviewsFullscreenEscape);
+    });
+  });
+
+  reviewsFullscreen.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("reviews__fullscreen-img")) {
+      reviewsFullscreen.classList.remove("active");
+      body.classList.remove("lock");
+    }
+  });
 };
 
 // ===== ФОРМЫ
@@ -387,7 +409,7 @@ let data = {
   digger: [
     {
       imgName: "4.jpg",
-      header: "Аренда гусинечных экскаваторов CATERPILLAR",
+      header: "Аренда экскаваторов CATERPILLAR",
       name1: "Объём фронтального ковша",
       value1: "1,3 м3",
       name2: "Высота выгрузки",
@@ -741,15 +763,25 @@ catalolgCategories.forEach((el) => {
   });
 });
 
+// изменение количества карточек при ресайзе экрана
+
+let cardsAmout = 16;
+
+window.addEventListener("resize", () => {
+  document.documentElement.clientWidth > 1279
+    ? (cardsAmout = 16)
+    : (cardsAmout = 12);
+});
+
 // отрисовка каталога
 
 const addToPage = (sortedItems) => {
-  for (let i = counter; i < counter + 16; i++) {
+  for (let i = counter; i < counter + cardsAmout; i++) {
     if (sortedItems[i] !== undefined) {
       catalogWrapper.append(sortedItems[i]);
     }
   }
-  counter += 16;
+  counter += cardsAmout;
 };
 
 // работа кнопки "показать больше"
@@ -761,4 +793,9 @@ catalogMore.addEventListener("click", () => {
 
 // первоначальное отображение каталога
 
-addToPage(createElement(switchCategory(category, data)));
+window.addEventListener("load", () => {
+  document.documentElement.clientWidth > 1279
+    ? (cardsAmout = 16)
+    : (cardsAmout = 12);
+  addToPage(createElement(switchCategory(category, data)));
+});
