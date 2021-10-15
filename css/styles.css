@@ -2668,7 +2668,7 @@ input {
 .reviews__info {
   position: relative;
   width: 68.38%;
-  height: 300px;
+  min-height: 300px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 63px 110px 70px 36px;
@@ -3759,13 +3759,11 @@ form {
   }
   .reviews__info {
     width: 100%;
-    height: 288px;
+    min-height: 288px;
+    padding: 50px 30px;
   }
   .reviews__img {
     height: 70%;
-  }
-  .reviews__info {
-    padding: 50px 30px;
   }
   .reviews__header {
     width: 84%;
@@ -4338,7 +4336,7 @@ form {
     min-height: 594px;
   }
   .reviews__info {
-    height: 294px;
+    min-height: 294px;
     padding: 30px 20px;
   }
   .reviews__header {
