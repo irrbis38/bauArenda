@@ -40,6 +40,13 @@ window.onload = () => {
       nextEl: ".reviews__next",
       prevEl: ".reviews__prev",
     },
+    pagination: {
+      el: ".reviews__pagination",
+      type: "bullets",
+      bulletClass: "reviews__dot",
+      bulletActiveClass: "reviews__dot-active",
+      clickable: "true",
+    },
   });
 
   // to top button
