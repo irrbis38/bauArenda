@@ -2502,19 +2502,6 @@ input {
     margin-bottom: 0;
   }
 
-  & svg {
-    margin-right: 8px;
-  }
-
-  & a {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-  }
-
   & path {
     transition: fill 0.2s ease-in-out;
   }
@@ -2522,6 +2509,19 @@ input {
   &:hover path {
     fill: #ffcb09;
   }
+}
+
+.footer__icon {
+  margin-right: 8px;
+}
+
+.footer__cLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .footer__link {

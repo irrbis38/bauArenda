@@ -2945,19 +2945,6 @@ input {
   margin-bottom: 0;
 }
 
-.footer__text svg {
-  margin-right: 8px;
-}
-
-.footer__text a {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
 .footer__text path {
   -webkit-transition: fill 0.2s ease-in-out;
   transition: fill 0.2s ease-in-out;
@@ -2965,6 +2952,19 @@ input {
 
 .footer__text:hover path {
   fill: #ffcb09;
+}
+
+.footer__icon {
+  margin-right: 8px;
+}
+
+.footer__cLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .footer__link {
